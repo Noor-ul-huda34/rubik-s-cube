@@ -1,0 +1,108 @@
+* {
+
+    box-sizing: border-box;
+}
+
+body {
+    background-image: radial-gradient(rgb(7, 8, 12), rgb(0, 0, 0));
+    background-repeat: no-repeat;
+    scroll-behavior: smooth;
+    background-attachment: fixed;
+    background-position-x: center;
+    perspective: 800px;
+}
+
+#container {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#box-area {
+    position: relative;
+    transform-style: preserve-3d;
+    transform: rotate3d(1, 1, 0, 70deg);
+    animation: rotate 3s linear infinite;
+}
+
+
+@keyframes rotate {
+    0% {
+        transform: rotate3d(0, 0, 0, 0);
+    }
+
+    100% {
+        transform: rotate3d(1, 1, 0, 360deg);
+    }
+}
+
+.box {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border: 2px solid black;
+}
+
+.grid-container {
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    padding: 0;
+}
+
+.grid-container>div {
+    border: 1px solid black;
+    padding: 0;
+}
+
+#box-front {
+    transform: translateZ(100px);
+}
+
+#box-back {
+    transform: rotateY(180deg) translateZ(100px);
+}
+
+#box-right {
+    transform: rotateY(90deg) translateZ(100px);
+}
+
+#box-left {
+    transform: rotateY(-90deg) translateZ(100px);
+}
+
+#box-top {
+    transform: rotateX(90deg) translateZ(100px);
+}
+
+#box-bottom {
+    transform: rotateX(-90deg) translateZ(100px);
+}
+
+
+
+.bg-back {
+    background-color: blue;
+}
+
+.bg-front {
+    background-color: red;
+}
+
+.bg-right {
+    background-color: yellow;
+}
+
+.bg-left {
+    background-color: green;
+}
+
+.bg-top {
+    background-color: white;
+}
+
+.bg-bottom {
+    background-color: orange;
+}
